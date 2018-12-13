@@ -1,5 +1,5 @@
 package HackerEarth.InputOutput;
-
+import java.util.*;
 /*Given two strings, a and b , that may or may not be of the same length,
 determine the minimum number of character deletions required to make a and b anagrams.
 Any characters can be deleted from either of the strings.
@@ -30,11 +30,11 @@ public class Anagrams {
         int[] arr = new int[26];
 
         for (int i = 0; i < s1.length(); i++) {
-            arr[s1.charAt(i) - 'a']++;
+            arr[Math.abs(s1.charAt(i) - 'a')]++;
         }
 
         for (int i = 0; i < s2.length(); i++) {
-            arr[s2.charAt(i) - 'a']--;
+            arr[Math.abs(s2.charAt(i) - 'a')]--;
         }
 
         int ans = 0;
